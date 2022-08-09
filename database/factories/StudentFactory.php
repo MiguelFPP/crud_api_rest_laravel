@@ -24,6 +24,7 @@ class StudentFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'birthdate' => $this->faker->dateTimeBetween('-20 years', '-12 years'),
             'address' => $this->faker->address,
+            'active' => $this->faker->boolean,
         ];
     }
 }

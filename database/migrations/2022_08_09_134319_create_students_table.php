@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->date('birthdate');
             $table->string('address')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
