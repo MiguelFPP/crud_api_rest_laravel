@@ -17,10 +17,11 @@ class StudentController extends Controller
      *
      * @return JsonResponse A JsonResponse object
      */
-    public function getStudents(Request $request): JsonResponse
+    public function getStudents(): JsonResponse
     {
         try {
-            $students = Student::where('active', 1)->paginate(5);
+            $students = Student::where('active', 1)
+            ->paginate(5);
             return response()->json($students, 200);
         } catch (\Exception $ex) {
             return response()->json(['message' => 'Error while getting students'], 500);

@@ -17,5 +17,6 @@ class Student extends Model
         'phone',
         'birthdate',
         'address',
+        'status'
     ];
 }

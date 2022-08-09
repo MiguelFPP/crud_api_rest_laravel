@@ -22,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(StudentController::class)->group(function () {
     Route::get('/students', 'getStudents');
     Route::get('/students/{id}', 'getStudent');
+    Route::post('/students', 'createStudent');
+    Route::put('/students/{id}', 'updateStudent');
+    Route::delete('/students/{id}', 'deleteStudent');
 });
