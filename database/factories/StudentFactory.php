@@ -17,7 +17,13 @@ class StudentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'identification' => $this->faker->unique()->numberBetween(100000000, 999999999),
+            'name' => $this->faker->name,
+            'surname' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'birthdate' => $this->faker->dateTimeBetween('-20 years', '-12 years'),
+            'address' => $this->faker->address,
         ];
     }
 }
