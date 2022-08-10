@@ -25,4 +25,5 @@ Route::controller(StudentController::class)->group(function () {
     Route::post('/students', 'createStudent');
     Route::put('/students/{id}', 'updateStudent');
     Route::delete('/students/{id}', 'deleteStudent');
+    Route::put('/students/{id}/status', 'changeStatus');
 });

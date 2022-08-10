@@ -109,4 +109,14 @@ class StudentTest extends TestCase
             'message' => 'Student deleted',
         ]);
     }
+
+    public function test_can_change_status_student(){
+        $this->withoutExceptionHandling();
+        $student = Student::factory()->create();
+        $response = $this->put('/api/students/' . $student->id . '/status');
+        $response->assertStatus(200);
+        $response->assertJson([
+            'message' => 'Student status changed',
+        ]);
+    }
 }
