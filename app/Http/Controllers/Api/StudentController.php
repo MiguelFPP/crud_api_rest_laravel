@@ -21,7 +21,7 @@ class StudentController extends Controller
     {
         try {
             $students = Student::orderBy('id', 'desc')
-                ->paginate(5);
+                ->get();
             return response()->json($students, 200);
         } catch (\Exception $ex) {
             return response()->json(['message' => 'Error while getting students'], 500);
